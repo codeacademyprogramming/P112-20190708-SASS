@@ -1,0 +1,17 @@
+
+@mixin mxn-button {
+    padding: 20px 10px;
+    display: inline-block;
+    color: $secondary-color;
+}
+
+@mixin headers($fsize, $color : blue) {
+    font-size: $fsize;
+    color: $color;
+}
+
+@mixin section-bashligi{
+    font-size: 72px;
+    font-weight: 700;
+    text-transform: uppercase;
+}

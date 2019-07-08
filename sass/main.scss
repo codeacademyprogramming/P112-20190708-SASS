@@ -1,0 +1,147 @@
+@import '_variables';
+@import '_mixins';
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 5000px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1 {
+    @include headers(25px, $primary-color);
+}
+
+h3 {
+    @include headers(17px);
+}
+
+.section-title { 
+    @include section-bashligi;
+
+    span {
+        display: block;
+    }
+}
+
+.separator {
+    border-color: $primary-color;
+    width:40%;
+    border-width: 10px;
+    border-top: 10px solid $primary-color; 
+}
+
+nav {
+    background-color: $primary-color;
+    
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & > a {
+            color: $secondary-color;
+            font-size: 30px;
+        }
+    
+        .menu {
+            display: flex;
+            list-style: none;
+            margin-bottom: 0;
+
+            li {
+                margin: 0 2px;
+                a {
+                    @include mxn-button;
+                    
+                    &:hover{
+                        background-color: $secondary-color;
+                        color: #fff;
+                    }
+                }
+                &.menu-active {
+                    background-color: $secondary-color;
+                    a {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.intro {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('https://cdn.pixabay.com/photo/2019/06/23/01/56/cityscape-4292702_960_720.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.493);
+    }
+
+    .intro-body {
+        text-align: center;
+        color: #fff;
+        .title {
+            font-size: 80px;
+            .main {
+                color: $primary-color;
+            }
+            .subtitle {
+                font-size: 50px;
+                display: block;
+            }
+        }
+
+        .desc {
+            color: $text-color;
+            margin: 20px 0;
+        }
+
+        .button {
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 15px 25px;
+            display: inline-block;
+            &:hover{
+                color: $primary-color;
+                border-color: $primary-color;
+            }
+        }
+    }
+}
+
+
+.services {
+    .section-title {
+        color: #313338;
+    }
+    .content {
+        color: $text-color;
+    }
+}
+
+.projects {
+    .section-title {
+        color: #fff;
+    }
+}
